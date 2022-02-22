@@ -1,9 +1,11 @@
 :root {
   --header-height: 120px;
   --navbar-height: 34px;
-  --hearder-with-search-height: calc(
-    var(--header-height) - var(--navbar-height)
-  );
+  --hearder-with-search-height: calc( var(--header-height) - var(--navbar-height) );
+  --text-color: #333;
+  --while-color:#fff;
+  --border-color:#dbdbdb;
+  --priamry-color: #EE4D2D;
 }
 * {
   box-sizing: inherit;
@@ -197,7 +199,7 @@ html {
   border-top: 1px solid rgb(22, 21, 21);
   border-bottom: 1px solid rgb(22, 21, 21); 
   background-color: rgb(253, 255, 255);
-  z-index: 3;
+  /* z-index: 3; */
   margin-top: 0px;
   position:absolute;
  
@@ -322,9 +324,9 @@ html {
   z-index: -1;
     
 }
-footer > .gird{
+.footer > .gird{
   display: flex;
-  margin-top: 220px;
+  margin-top: 260px;
   float: left;
   /* width:100%; */
   /* background-color: red; */
@@ -381,4 +383,194 @@ footer > .gird{
 }
 .foot__lisi-content-icon-QR:hover{
   transform: scale(1.3);
+}
+/* animation*/
+@keyframes growAnimation{
+  from{
+    opacity: 0;
+  
+  }to{
+    opacity: 1;
+    
+  }
+}
+@keyframese growth{
+  from{
+   transform: scale(--growth-form);
+
+  }to{
+    transform: scale(--growth-to);
+    
+  }
+}
+/*   modal */
+.modal{
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  animation: growAnimation linear 0.1s;
+}
+.modal__overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 4;
+}
+.modal__body{
+  
+  --growth-form: 0.7;
+  --growth-to: 1;
+  margin: auto;
+  position: relative;
+  z-index: 5;
+  border-radius: 5px ;
+  animation: growth linear 0.3s ;
+}
+/* Authen modal */
+.auth__form{
+  width: 500px;
+  background-color: var(--while-color);
+  border-radius: 5px ;
+  overflow: hidden;
+}
+.auth-form__container{
+  padding: 0 32px;
+
+}
+.auth__form--header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 12px;
+  margin-top: 12px;
+}
+.auth__form--heading{
+  font-size: 2rem;
+  font-weight: 500;
+  color:var(--text-color);
+}
+.auth-form__switch-btn{
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: orangered;
+  cursor: pointer;
+}
+.auth-form__form{
+
+}
+.auth-form__input{
+  width: 100%;
+  height: 40px;
+  margin-top: 16px;  
+  padding: 0 12px;
+  font-size: 1.4rem;
+  border: 1px solid var(--border-color);
+  border-radius: 2px;
+  outline: none;
+}
+.auth-form__input:focus{
+  border-color: #888;
+}
+.auth-form__aside{
+  margin-top: 18px;
+}
+.auth-form__policy-text{
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 0 12px;
+}
+.auth-form__text-link{
+  color: var(--priamry-color);
+  text-decoration: none;
+}
+.auth-form__controls{
+  margin-top: 80px;
+  display: flex;
+  justify-content: flex-end;
+}
+.auth-form__controls-back{
+  margin-right: 8px;
+}
+.btn{
+  min-width: 142px;
+  height: 34px;
+  text-decoration: none;
+  border: none;
+  border-radius: 2px;
+  font-size: 1.5rem;
+  padding: 0 12px;
+  outline: none;
+  cursor: pointer;
+  color: var(--text-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.6rem;
+
+
+}
+.btn.btn-normal:hover{
+  background-color: rgba(0, 0, 0, 0.05);
+}
+.btn.btn--size-s{
+  height: 32px;
+  font-size: 12px;
+  padding: 0 8px;
+}
+
+.btn.btn--primary{
+  color: var(--while-color);
+  background-color: var(--priamry-color);
+}
+.auth-form__socials{
+  background-color: #f5f5f5;
+  padding: 16px 36px;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-top: 24px;
+}
+.auth-form__socials-icon{
+  font-size: 1.8rem;
+}
+.auth-form__socials--fecebook{
+  color: var(--while-color);
+  background-color: #3A5A98 ;
+}
+.auth-form__socials--fecebook
+.auth-form__socials-icon{
+  color: var(--while-color)
+
+}
+.auth-form__socials--title{
+  margin: 0 36px;
+}
+.auth-form__socials--google{
+  background-color: var(--while-color);
+}
+/* login */
+.auth-form__help{
+  display: flex;
+  justify-content: flex-end ;
+}
+.auth-form__help-link{
+  font-size: 1.4rem;
+  text-decoration: none;
+  color:var(--text-color);
+}
+.auth-form__help-separate{
+  display: block;
+  height: 18px;
+  border-left: 1px solid #EAEAEA;
+  margin: 0 16px;
+  
+}
+.auth-form__help-forgot{
+  color: var(--priamry-color);
 }
